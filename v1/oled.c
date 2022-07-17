@@ -312,6 +312,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 }
 
 bool oled_task_user(void) {
+    current_wpm   = get_current_wpm();
     led_usb_state = host_keyboard_led_state();
     if (is_keyboard_master()) {
         print_status_narrow();
